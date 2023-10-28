@@ -1,0 +1,51 @@
+import java.util.*;
+import java.io.*;
+
+public class DaysOfChristmas {
+	public static void main ( String [ ] args ) throws FileNotFoundException {
+		DaysOfChristmas daysOfChristmas = new DaysOfChristmas();
+		File file = new File("//C:////Users////prove////12DaysOfChristmas.txt");
+		Scanner scanner = new Scanner ( file );
+		PrintWriter printWriter = new PrintWriter("//C:////Users////prove////DaysOfChristmasOutputFile.txt");
+		ArrayList<String> arrayList = new ArrayList<>();
+		ArrayList<String> day = new ArrayList<>(Arrays.asList("First","Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth"));
+		
+		while ( scanner.hasNextLine() ) {
+			String line = scanner.nextLine();
+			arrayList.add(line);
+		}
+		arrayList = daysOfChristmas.reverse( arrayList );
+
+		
+//
+//		for ( int i = 0; i < arrayList.size(); i++ ) {
+//			System.out.println(arrayList.get(i));
+//		}
+		
+
+		for ( int i = 0; i < arrayList.size(); i++ ) {
+//			System.out.println("On the" + (i == 1 ? (" 2nd day of Christmas"): (i == 2)? (" 3rd day of Christmas"): " First day of Christmas" + "\n" + "My true love sent to me"));
+
+			System.out.println("On the " + day.get(i) + " day of Christmas" + "\n" + "My true love sent to me");
+			printWriter.write("On the " + day.get(i) + " day of Christmas" + "\n" + "My true love sent to me\n");
+			for ( int j = i; j >= 0 ; j-- ) {
+				System.out.println(arrayList.get(j));
+				printWriter.write(arrayList.get(j) + "\n");
+				
+			}
+			printWriter.write("\n");
+			System.out.println("\n");
+
+		}
+		printWriter.close();
+		scanner.close();
+	}
+	public ArrayList<String> reverse ( ArrayList<String> arrayList ){
+		ArrayList<String> temp = new ArrayList<>();
+		for ( int i = arrayList.size()-1; i>=0; i-- ) {
+			temp.add(arrayList.get(i));
+		}
+		return temp;
+	}
+
+}
