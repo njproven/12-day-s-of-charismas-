@@ -4,9 +4,9 @@ import java.io.*;
 public class DaysOfChristmas {
 	public static void main ( String [ ] args ) throws FileNotFoundException {
 		DaysOfChristmas daysOfChristmas = new DaysOfChristmas();
-		File file = new File("//C:////Users////prove////12DaysOfChristmas.txt");
+		File file = new File("12DaysOfChristmas.txt");
 		Scanner scanner = new Scanner ( file );
-		PrintWriter printWriter = new PrintWriter("//C:////Users////prove////DaysOfChristmasOutputFile.txt");
+		PrintWriter printWriter = new PrintWriter("DaysOfChristmasOutputFile.txt");
 		ArrayList<String> arrayList = new ArrayList<>();
 		ArrayList<String> day = new ArrayList<>(Arrays.asList("First","Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth"));
 		
